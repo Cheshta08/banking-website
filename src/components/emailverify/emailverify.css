@@ -1,0 +1,83 @@
+.form-container, .phone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+/* Styling for the form boxes */
+.model, .phone {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling for headers */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling for input fields */
+input[type="email"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for resend OTP link */
+p {
+    margin: 20px 0;
+}
+
+p button {
+    background-color: transparent;
+    color: #007BFF;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+p button:hover {
+    text-decoration: underline;
+}
+
+/* Styling for verification success message */
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 20px;
+}
