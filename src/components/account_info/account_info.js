@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { jsPDF } from 'jspdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './account_info.css';
 import AddTransactionPopup from './add-transaction-popup';
+import { saveAs } from 'file-saver';
 
 function Account() {
     const { userId } = useParams();
@@ -36,6 +36,7 @@ function Account() {
                 const { initial_balance, balance, email } = await response.json();
                 setInitialBalance(initial_balance);
                 setCurrentBalance(balance);
+                console.log(email)
                 setEmail(email);
             } else {
                 console.error('Failed to fetch user balance');
@@ -60,12 +61,18 @@ function Account() {
         }
     };
 
-    const downloadStatement = (statement) => {
-        const doc = new jsPDF();
-        doc.text(`Downloaded ${statement.name}`, 20, 20);
-        doc.save(`${statement.name}.pdf`);
+    const downloadStatement = async (statement) => {
+        try {
+            const response = await fetch(statement.file);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const blob = await response.blob();
+            saveAs(blob, `${statement.name}.pdf`);
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
     };
-
 
 
     const emailStatement = async (statement) => {
