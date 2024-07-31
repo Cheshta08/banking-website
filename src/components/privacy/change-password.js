@@ -21,7 +21,7 @@ const ChangePasswordPopup = ({ togglePopup ,userId }) => {
 
     try{
 
-        const response = await fetch(`http://localhost:5000/change-password/${userId}`, {
+        const response = await fetch(`https://banking-website-backend-1.vercel.app/change-password/${userId}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json",
