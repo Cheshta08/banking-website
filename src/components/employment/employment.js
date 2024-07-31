@@ -172,7 +172,7 @@ const EmploymentDetails = () => {
         } else {
             setValidationMessage('');
             try{
-                const response = await fetch(`http://localhost:5000/user/${userId}`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/user/${userId}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-type': 'application/json',
@@ -238,7 +238,7 @@ const EmploymentDetails = () => {
         if (isValid) {
             try {
                 // Send data to the server
-                const response = await fetch(`http://localhost:5000/user/${userId}`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/user/${userId}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-type': 'application/json',
