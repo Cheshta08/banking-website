@@ -31,7 +31,7 @@ function Account() {
 
     const fetchBalance = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/user/${userId}/balance`);
+            const response = await fetch(`https://banking-website-backend-1.vercel.app/user/${userId}/balance`);
             if (response.ok) {
                 const { initial_balance, balance, email } = await response.json();
                 setInitialBalance(initial_balance);
@@ -49,7 +49,7 @@ function Account() {
 
     const loadTransactions = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/user/${userId}/transaction`);
+            const response = await fetch(`https://banking-website-backend-1.vercel.app/user/${userId}/transaction`);
             if (response.ok) {
                 const transactionData = await response.json();
                 setTransactions(transactionData);
@@ -86,7 +86,7 @@ function Account() {
             formData.append('text', 'Attached is your statement PDF.');
             formData.append('pdfFile', blob, `${statement.name}.pdf`);
 
-            const emailResponse = await fetch('http://localhost:5000/send-statement', {
+            const emailResponse = await fetch('https://banking-website-backend-1.vercel.app/send-statement', {
                 method: 'POST',
                 body: formData
             });
