@@ -12,7 +12,7 @@ function ProfileDetails() {
     useEffect(() => {
         const fetchUserInfo = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/info/${userId}`);
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/info/${userId}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch user information');
                 }
@@ -31,7 +31,7 @@ function ProfileDetails() {
          setModalState({ isOpen: false, section: null });
     
         try {
-            const response = await fetch(`http://localhost:5000/update/${userInfos._id}`, {
+            const response = await fetch(`https://banking-website-backend-1.vercel.app/update/${userInfos._id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
