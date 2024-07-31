@@ -171,7 +171,7 @@ const PD = () => {
       console.log(userData)
 
       try {
-        const response = await fetch("http://localhost:5000/user", {
+        const response = await fetch("https://banking-website-backend-1.vercel.app/user", {
             method: "POST",
             headers: {
               "Content-type": "application/json",
