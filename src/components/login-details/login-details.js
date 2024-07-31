@@ -41,7 +41,7 @@ function LoginDetails() {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const response = await fetch(`http://localhost:5000/loginDetails/${userId}`, {
+        const response = await fetch(`https://banking-website-backend-1.vercel.app/${userId}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
