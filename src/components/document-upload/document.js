@@ -127,7 +127,7 @@ const DocumentUpload = () => {
     formData.append('userId', userId);
 
     try {
-      const response = await fetch('http://localhost:5000/document-upload', {
+      const response = await fetch('https://banking-website-backend-1.vercel.app/document-upload', {
         method: 'POST',
         body: formData
       });
