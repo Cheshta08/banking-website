@@ -10,7 +10,7 @@ const AddTransactionPopup = ({ togglePopup, userId, loadTransactions, fetchBalan
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5000/user/${userId}/transactions`, {
+      const response = await fetch(`https://banking-website-backend-1.vercel.app/user/${userId}/transactions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
