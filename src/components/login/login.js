@@ -13,7 +13,7 @@ const Login = () => {
     if(email&&password)
     {
         try {
-            const response = await fetch(`http://localhost:5000/login`, {
+            const response = await fetch(`https://banking-website-backend-1.vercel.app/login`, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
