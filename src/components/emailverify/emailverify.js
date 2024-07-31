@@ -36,7 +36,7 @@ const EmailVerification = () => {
     const sendOTP = async () => {
         if (email) {
             try {
-                const response = await fetch(`http://localhost:5000/send-email`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/send-email`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -59,7 +59,7 @@ const EmailVerification = () => {
     const sendPhoneOTP = async () => {
         if (phone) {
             try {
-                const response = await fetch(`http://localhost:5000/send-otp`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/send-otp`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -95,7 +95,7 @@ const EmailVerification = () => {
             setIsPhoneVerified(true);
             setProgress(100);
             try {
-                const response = await fetch(`http://localhost:5000/user/${userId}`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/user/${userId}`, {
                     method: "PATCH",
                     headers: {
                         "Content-type": "application/json",
