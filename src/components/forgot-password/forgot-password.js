@@ -16,7 +16,7 @@ const ForgotPassword = () => {
         e.preventDefault();
         if (email) {
             try {
-                const response = await fetch(`http://localhost:5000/verify-email`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/verify-email`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
     const handleResendOtp = async () => {
         if (email) {
             try {
-                const response = await fetch(`http://localhost:5000/verify-email`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/verify-email`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -102,7 +102,7 @@ const ForgotPassword = () => {
         if (errors.length === 0 && newPassword === confirmPassword) { 
             console.log('Set new password for:', email);
             try {
-                const response = await fetch(`http://localhost:5000/forgot-password`, {
+                const response = await fetch(`https://banking-website-backend-1.vercel.app/forgot-password`, {
                     method: "PATCH",
                     headers: {
                         "Content-type": "application/json",
